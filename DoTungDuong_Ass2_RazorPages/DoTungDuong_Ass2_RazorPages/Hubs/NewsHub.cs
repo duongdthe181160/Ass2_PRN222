@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DoTungDuong_Ass2_RazorPages.Hubs
 {

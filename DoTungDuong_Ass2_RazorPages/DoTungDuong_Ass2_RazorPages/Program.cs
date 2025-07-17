@@ -19,16 +19,29 @@ builder.Services.AddScoped<INewsArticleRepository, NewsArticleRepository>();
 
 // Dependency Injection - Services
 builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<NewsArticleService>();
 builder.Services.AddScoped<SystemAccountService>();
 builder.Services.AddScoped<TagService>();
+
+// Special handling for NewsArticleService with SignalR integration
+builder.Services.AddScoped<NewsArticleService>(provider =>
+{
+    var newsRepo = provider.GetRequiredService<INewsArticleRepository>();
+    var tagRepo = provider.GetRequiredService<IRepository<Tag>>();
+    var categoryRepo = provider.GetRequiredService<IRepository<Category>>();
+    var hubContext = provider.GetRequiredService<IHubContext<NewsHub>>();
+    
+    var service = new NewsArticleService(newsRepo, tagRepo, categoryRepo);
+    service.SetSignalRNotifier(async (message) => 
+        await hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", message));
+    return service;
+});
 
 // Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Login";
-        options.AccessDeniedPath = "/AccessDenied"; // Add a page if needed
+        options.AccessDeniedPath = "/AccessDenied";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
         options.SlidingExpiration = true;
     });
@@ -51,17 +64,25 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Redirect logic for authenticated users
 app.Use(async (context, next) =>
 {
     if (context.Request.Path == "/")
     {
-        if (!context.User.Identity.IsAuthenticated)
+        if (!context.User.Identity?.IsAuthenticated ?? false)
         {
             context.Response.Redirect("/Login");
             return;
         }
 
-        context.Response.Redirect("/Index");
+        var role = context.User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+        context.Response.Redirect(role switch
+        {
+            "Admin" => "/AccountPage/Index",
+            "Staff" => "/NewsArticlePage/Index", 
+            "Lecturer" => "/ViewNewsPage/Index",
+            _ => "/Login"
+        });
         return;
     }
     await next();

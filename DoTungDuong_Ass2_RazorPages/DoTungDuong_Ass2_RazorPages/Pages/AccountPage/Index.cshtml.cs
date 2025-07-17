@@ -15,8 +15,8 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.AccountPage
 
         public IndexModel(SystemAccountService service) { _service = service; }
 
-        public IEnumerable<SystemAccount> Accounts { get; set; }
-        [BindProperty] public SystemAccount Account { get; set; }
+        public IEnumerable<SystemAccount> Accounts { get; set; } = new List<SystemAccount>();
+        [BindProperty] public SystemAccount Account { get; set; } = new SystemAccount();
 
         public void OnGet(string search = null)
         {

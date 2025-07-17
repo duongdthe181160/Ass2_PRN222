@@ -1,8 +1,6 @@
-﻿using DoTungDuong_Ass2_RazorPages.Hubs;
 using DoTungDuongDAL;
 using DoTungDuongDAL.Models;
 using DoTungDuongDAL.Repositories;
-using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,23 +14,26 @@ namespace DoTungDuongBLL.Services
         private readonly INewsArticleRepository _repository;
         private readonly IRepository<Category> _categoryRepo;
         private readonly IRepository<Tag> _tagRepo;
-        private readonly IHubContext<NewsHub> _hubContext;
+        private Func<string, Task>? _signalRNotifier;
 
         public NewsArticleService(
             INewsArticleRepository repository,
             IRepository<Tag> tagRepo,
-            IRepository<Category> categoryRepo,
-            IHubContext<NewsHub> hubContext)
+            IRepository<Category> categoryRepo)
         {
             _repository = repository;
             _tagRepo = tagRepo;
             _categoryRepo = categoryRepo;
-            _hubContext = hubContext;
+        }
+
+        public void SetSignalRNotifier(Func<string, Task> notifier)
+        {
+            _signalRNotifier = notifier;
         }
 
         public IEnumerable<NewsArticle> GetAll() => _repository.GetNewsWithTags();
 
-        public NewsArticle GetById(string id) => _repository.GetById(id);
+        public NewsArticle? GetById(string id) => _repository.GetById(id);
 
         public async Task AddAsync(NewsArticle article, List<int> tagIds)
         {
@@ -46,7 +47,13 @@ namespace DoTungDuongBLL.Services
             }
             _repository.Update(article);
 
-            await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", "New article created");
+            if (_signalRNotifier != null)
+                await _signalRNotifier("New article created");
+        }
+
+        public void Add(NewsArticle article, List<int> tagIds)
+        {
+            AddAsync(article, tagIds).Wait();
         }
 
         public async Task UpdateAsync(NewsArticle article, List<int> tagIds)
@@ -74,16 +81,29 @@ namespace DoTungDuongBLL.Services
 
             _repository.Update(existing);
 
-            await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", $"Article {article.NewsArticleId} updated");
+            if (_signalRNotifier != null)
+                await _signalRNotifier($"Article {article.NewsArticleId} updated");
         }
 
-        public void Delete(string id)
+        public void Update(NewsArticle article, List<int> tagIds)
+        {
+            UpdateAsync(article, tagIds).Wait();
+        }
+
+        public async Task DeleteAsync(string id)
         {
             var article = _repository.GetById(id);
             if (article != null)
             {
                 _repository.Delete(article);
+                if (_signalRNotifier != null)
+                    await _signalRNotifier($"Article {id} deleted");
             }
+        }
+
+        public void Delete(string id)
+        {
+            DeleteAsync(id).Wait();
         }
 
         public IEnumerable<NewsArticle> Search(Expression<Func<NewsArticle, bool>> predicate) => _repository.Search(predicate);

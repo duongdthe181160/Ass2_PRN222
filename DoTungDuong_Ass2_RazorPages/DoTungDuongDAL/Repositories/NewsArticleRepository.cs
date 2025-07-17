@@ -1,4 +1,4 @@
-﻿using DoTungDuongDAL.Models;
+using DoTungDuongDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,10 +26,13 @@ namespace DoTungDuongDAL.Repositories
         public void UpdateNewsWithTags(NewsArticle news, List<int> tagIds)
         {
             var existing = GetById(news.NewsArticleId);
-            _context.Entry(existing).Collection(e => e.Tags).Load();
-            existing.Tags.Clear();
-            existing.Tags = _context.Tags.Where(t => tagIds.Contains(t.TagId)).ToList();
-            Update(news);
+            if (existing != null)
+            {
+                _context.Entry(existing).Collection(e => e.Tags).Load();
+                existing.Tags.Clear();
+                existing.Tags = _context.Tags.Where(t => tagIds.Contains(t.TagId)).ToList();
+                Update(existing);
+            }
         }
     }
 }

@@ -1,17 +1,35 @@
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.csproj.AssemblyReference.cache
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.GeneratedMSBuildEditorConfig.editorconfig
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.AssemblyInfoInputs.cache
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.AssemblyInfo.cs
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.csproj.CoreCompileInputs.cache
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongBLL.deps.json
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongBLL.runtimeconfig.json
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongBLL.dll
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongBLL.pdb
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongDAL.dll
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\bin\Debug\net8.0\DoTungDuongDAL.pdb
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDu.08592951.Up2Date
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.dll
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\refint\DoTungDuongBLL.dll
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.pdb
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\DoTungDuongBLL.genruntimeconfig.cache
-F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongBLL\obj\Debug\net8.0\ref\DoTungDuongBLL.dll
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.csproj.AssemblyReference.cache
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.GeneratedMSBuildEditorConfig.editorconfig
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.AssemblyInfoInputs.cache
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.AssemblyInfo.cs
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.csproj.CoreCompileInputs.cache
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.deps.json
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.runtimeconfig.json
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.dll
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.pdb
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongDAL.dll
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongDAL.pdb
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDu.08592951.Up2Date
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.dll
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/refint/DoTungDuongBLL.dll
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.pdb
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.genruntimeconfig.cache
+F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/ref/DoTungDuongBLL.dll
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.csproj.AssemblyReference.cache
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.AssemblyInfoInputs.cache
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.AssemblyInfo.cs
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.csproj.CoreCompileInputs.cache
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.sourcelink.json
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.deps.json
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.runtimeconfig.json
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.dll
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongBLL.pdb
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongDAL.dll
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/bin/Debug/net8.0/DoTungDuongDAL.pdb
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDu.08592951.Up2Date
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.dll
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/refint/DoTungDuongBLL.dll
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.pdb
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/DoTungDuongBLL.genruntimeconfig.cache
+/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuongBLL/obj/Debug/net8.0/ref/DoTungDuongBLL.dll

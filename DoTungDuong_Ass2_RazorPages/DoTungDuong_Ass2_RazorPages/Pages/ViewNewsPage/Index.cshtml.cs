@@ -13,7 +13,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.ViewNewsPage
 
         public IndexModel(NewsArticleService service) { _service = service; }
 
-        public IEnumerable<NewsArticle> ActiveNews { get; set; }
+        public IEnumerable<NewsArticle> ActiveNews { get; set; } = new List<NewsArticle>();
 
         public void OnGet()
         {

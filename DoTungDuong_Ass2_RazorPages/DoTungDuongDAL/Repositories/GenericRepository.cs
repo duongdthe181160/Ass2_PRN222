@@ -1,4 +1,4 @@
-﻿using DoTungDuongDAL.Models;
+using DoTungDuongDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace DoTungDuongDAL.Repositories
             return _dbSet.ToList();
         }
 
-        public T GetById(object id)
+        public T? GetById(object id)
         {
             return _dbSet.Find(id);
         }

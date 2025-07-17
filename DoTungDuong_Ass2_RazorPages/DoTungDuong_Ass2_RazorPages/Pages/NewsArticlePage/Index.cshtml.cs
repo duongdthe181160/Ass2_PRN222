@@ -27,11 +27,11 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
             _hubContext = hubContext;
         }
 
-        public IEnumerable<NewsArticle> NewsArticles { get; set; }
-        [BindProperty] public NewsArticle NewsArticle { get; set; }
-        public IEnumerable<Tag> Tags { get; set; }
-        public IEnumerable<Category> Categories { get; set; }
-        [BindProperty] public List<int> SelectedTags { get; set; }
+        public IEnumerable<NewsArticle> NewsArticles { get; set; } = new List<NewsArticle>();
+        [BindProperty] public NewsArticle NewsArticle { get; set; } = new NewsArticle();
+        public IEnumerable<Tag> Tags { get; set; } = new List<Tag>();
+        public IEnumerable<Category> Categories { get; set; } = new List<Category>();
+        [BindProperty] public List<int> SelectedTags { get; set; } = new List<int>();
 
         public void OnGet(string search = null)
         {
