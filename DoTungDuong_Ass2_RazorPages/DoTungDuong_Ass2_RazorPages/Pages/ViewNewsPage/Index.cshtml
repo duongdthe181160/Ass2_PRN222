@@ -1,0 +1,18 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.ViewNewsPage.IndexModel
+
+<h2>Active News</h2>
+<table class="table">
+    <thead><tr><th>Title</th><th>Headline</th><th>Content</th><th>Source</th></tr></thead>
+    <tbody>
+        @foreach (var article in Model.ActiveNews)
+        {
+            <tr>
+                <td>@article.NewsTitle</td>
+                <td>@article.Headline</td>
+                <td>@article.NewsContent</td>
+                <td>@article.NewsSource</td>
+            </tr>
+        }
+    </tbody>
+</table>

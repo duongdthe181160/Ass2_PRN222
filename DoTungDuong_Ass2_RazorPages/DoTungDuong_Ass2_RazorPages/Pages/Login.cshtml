@@ -1,0 +1,10 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.LoginModel
+
+<h2>Login</h2>
+<form method="post">
+    <label>Email:</label><input asp-for="Email" required />
+    <label>Password:</label><input asp-for="Password" type="password" required />
+    <button type="submit">Login</button>
+    <span asp-validation-for="Email"></span>
+</form>

@@ -1,0 +1,16 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.ProfilePage.IndexModel
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<h2>Update Profile</h2>
+<form method="post">
+    <input type="hidden" asp-for="Account.AccountId" />
+    <label>Name:</label><input asp-for="Account.AccountName" required />
+    <label>Email:</label><input asp-for="Account.AccountEmail" required />
+    <label>Password:</label><input asp-for="Account.AccountPassword" required />
+    <button type="submit">Update</button>
+</form>
+

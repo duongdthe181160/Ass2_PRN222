@@ -1,0 +1,22 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.ReportPage.IndexModel
+
+<h2>Report Statistic</h2>
+<form method="post">
+    <label>Start Date:</label><input type="date" asp-for="StartDate" />
+    <label>End Date:</label><input type="date" asp-for="EndDate" />
+    <button type="submit">Generate</button>
+</form>
+
+@if (Model.ReportData != null)
+{
+    <table class="table">
+        <thead><tr><th>Category</th><th>Active</th><th>Inactive</th><th>Total</th></tr></thead>
+        <tbody>
+            @foreach (var item in Model.ReportData)
+            {
+                <tr><td>@item.CategoryName</td><td>@item.ActiveCount</td><td>@item.InactiveCount</td><td>@item.Total</td></tr>
+            }
+        </tbody>
+    </table>
+}

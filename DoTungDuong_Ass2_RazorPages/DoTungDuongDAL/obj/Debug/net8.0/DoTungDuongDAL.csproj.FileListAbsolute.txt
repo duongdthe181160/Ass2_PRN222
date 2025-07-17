@@ -1,0 +1,14 @@
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.csproj.AssemblyReference.cache
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.AssemblyInfoInputs.cache
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.AssemblyInfo.cs
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.csproj.CoreCompileInputs.cache
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\bin\Debug\net8.0\DoTungDuongDAL.deps.json
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\bin\Debug\net8.0\DoTungDuongDAL.runtimeconfig.json
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\bin\Debug\net8.0\DoTungDuongDAL.dll
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\bin\Debug\net8.0\DoTungDuongDAL.pdb
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.dll
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\refint\DoTungDuongDAL.dll
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.pdb
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\DoTungDuongDAL.genruntimeconfig.cache
+F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuongDAL\obj\Debug\net8.0\ref\DoTungDuongDAL.dll

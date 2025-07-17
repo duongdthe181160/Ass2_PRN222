@@ -1,0 +1,72 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.CategoryPage.IndexModel
+
+<h2>Category Management</h2>
+<input type="text" placeholder="Search by Name" oninput="location.href='?search='+this.value" />
+<button data-bs-toggle="modal" data-bs-target="#addModal">Add New</button>
+
+<table class="table">
+    <thead><tr><th>ID</th><th>Name</th><th>Description</th><th>Active</th><th>Actions</th></tr></thead>
+    <tbody>
+        @foreach (var cat in Model.Categories)
+        {
+            <tr>
+                <td>@cat.CategoryId</td>
+                <td>@cat.CategoryName</td>
+                <td>@cat.CategoryDesciption</td>
+                <td>@cat.IsActive</td>
+                <td>
+                    <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="fillEdit(@cat.CategoryId, '@cat.CategoryName', '@cat.CategoryDesciption', @cat.IsActive, @cat.ParentCategoryId)">Edit</button>
+                    <button onclick="if(confirm('Delete this category?')) location.href='?handler=Delete&id=@cat.CategoryId'">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Add">
+                <input asp-for="Category.CategoryName" placeholder="Name" required />
+                <input asp-for="Category.CategoryDesciption" placeholder="Description" required />
+                <select asp-for="Category.IsActive">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <input asp-for="Category.ParentCategoryId" placeholder="Parent ID (optional)" />
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Update">
+                <input type="hidden" asp-for="Category.CategoryId" id="editId" />
+                <input asp-for="Category.CategoryName" id="editName" required />
+                <input asp-for="Category.CategoryDesciption" id="editDesc" required />
+                <select asp-for="Category.IsActive" id="editActive">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <input asp-for="Category.ParentCategoryId" id="editParent" />
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function fillEdit(id, name, desc, active, parent) {
+        document.getElementById('editId').value = id;
+        document.getElementById('editName').value = name;
+        document.getElementById('editDesc').value = desc;
+        document.getElementById('editActive').value = active ? 'true' : 'false';
+        document.getElementById('editParent').value = parent || '';
+    }
+</script>

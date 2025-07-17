@@ -1,0 +1,118 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage.IndexModel
+
+<h2>News Article Management</h2>
+<input type="text" placeholder="Search by Headline" oninput="location.href='?search='+this.value" />
+<button data-bs-toggle="modal" data-bs-target="#addModal">Add New</button>
+
+<table class="table">
+    <thead><tr><th>ID</th><th>Title</th><th>Headline</th><th>Content</th><th>Status</th><th>Tags</th><th>Actions</th></tr></thead>
+    <tbody>
+        @foreach (var article in Model.NewsArticles)
+        {
+            <tr>
+                <td>@article.NewsArticleId</td>
+                <td>@article.NewsTitle</td>
+                <td>@article.Headline</td>
+                <td>@article.NewsContent.Substring(0, 50)...</td>
+                <td>@article.NewsStatus</td>
+                <td>@string.Join(", ", article.Tags.Select(t => t.TagName))</td>
+                <td>
+                    <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="fillEdit('@article.NewsArticleId', '@article.NewsTitle', '@article.Headline', '@article.NewsContent', '@article.NewsSource', @article.CategoryId, @article.NewsStatus, '@string.Join(",", article.Tags.Select(t => t.TagId))') ">Edit</button>
+                    <button onclick="if(confirm('Delete this article?')) location.href='?handler=Delete&id=@article.NewsArticleId'">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Add">
+                <input asp-for="NewsArticle.NewsArticleId" placeholder="ID" required />
+                <input asp-for="NewsArticle.NewsTitle" placeholder="Title" />
+                <input asp-for="NewsArticle.Headline" placeholder="Headline" required />
+                <textarea asp-for="NewsArticle.NewsContent" placeholder="Content"></textarea>
+                <input asp-for="NewsArticle.NewsSource" placeholder="Source" />
+                <select asp-for="NewsArticle.CategoryId">
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <option value="@cat.CategoryId">@cat.CategoryName</option>
+                    }
+                </select>
+                <select asp-for="NewsArticle.NewsStatus">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <select multiple asp-for="SelectedTags">
+                    @foreach (var tag in Model.Tags)
+                    {
+                        <option value="@tag.TagId">@tag.TagName</option>
+                    }
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Update">
+                <input type="hidden" asp-for="NewsArticle.NewsArticleId" id="editId" />
+                <input asp-for="NewsArticle.NewsTitle" id="editTitle" />
+                <input asp-for="NewsArticle.Headline" id="editHeadline" required />
+                <textarea asp-for="NewsArticle.NewsContent" id="editContent"></textarea>
+                <input asp-for="NewsArticle.NewsSource" id="editSource" />
+                <select asp-for="NewsArticle.CategoryId" id="editCategory">
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <option value="@cat.CategoryId">@cat.CategoryName</option>
+                    }
+                </select>
+                <select asp-for="NewsArticle.NewsStatus" id="editStatus">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <select multiple asp-for="SelectedTags" id="editTags">
+                    @foreach (var tag in Model.Tags)
+                    {
+                        <option value="@tag.TagId">@tag.TagName</option>
+                    }
+                </select>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function fillEdit(id, title, headline, content, source, categoryId, status, tagIds) {
+        document.getElementById('editId').value = id;
+        document.getElementById('editTitle').value = title;
+        document.getElementById('editHeadline').value = headline;
+        document.getElementById('editContent').value = content;
+        document.getElementById('editSource').value = source;
+        document.getElementById('editCategory').value = categoryId;
+        document.getElementById('editStatus').value = status ? 'true' : 'false';
+        var select = document.getElementById('editTags');
+        var ids = tagIds.split(',');
+        for (var option of select.options) {
+            option.selected = ids.includes(option.value);
+        }
+    }
+</script>
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder().withUrl("/newsHub").build();
+    connection.on("ReceiveNewsUpdate", function (message) {
+        alert(message);
+        location.reload();
+    });
+    connection.start();
+</script>

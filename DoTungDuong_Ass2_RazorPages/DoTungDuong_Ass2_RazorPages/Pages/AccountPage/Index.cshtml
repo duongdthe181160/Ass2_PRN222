@@ -1,0 +1,73 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.AccountPage.IndexModel
+
+<h2>Account Management</h2>
+<input type="text" placeholder="Search by Name or Email" oninput="location.href='?search='+this.value" />
+<button data-bs-toggle="modal" data-bs-target="#addModal">Add New</button>
+
+<table class="table">
+    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr></thead>
+    <tbody>
+        @foreach (var acc in Model.Accounts)
+        {
+            <tr>
+                <td>@acc.AccountId</td>
+                <td>@acc.AccountName</td>
+                <td>@acc.AccountEmail</td>
+                <td>@acc.AccountRole</td>
+                <td>
+                    <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="fillEdit(@acc.AccountId, '@acc.AccountName', '@acc.AccountEmail', @acc.AccountRole, '@acc.AccountPassword')">Edit</button>
+                    <button onclick="if(confirm('Delete this account?')) location.href='?handler=Delete&id=@acc.AccountId'">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Add">
+                <input asp-for="Account.AccountId" placeholder="ID" required />
+                <input asp-for="Account.AccountName" placeholder="Name" required />
+                <input asp-for="Account.AccountEmail" placeholder="Email" required />
+                <select asp-for="Account.AccountRole">
+                    <option value="1">Staff</option>
+                    <option value="2">Lecturer</option>
+                </select>
+                <input asp-for="Account.AccountPassword" placeholder="Password" required />
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Update">
+                <input type="hidden" asp-for="Account.AccountId" id="editId" />
+                <input asp-for="Account.AccountName" id="editName" required />
+                <input asp-for="Account.AccountEmail" id="editEmail" required />
+                <select asp-for="Account.AccountRole" id="editRole">
+                    <option value="1">Staff</option>
+                    <option value="2">Lecturer</option>
+                </select>
+                <input asp-for="Account.AccountPassword" id="editPass" required />
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function fillEdit(id, name, email, role, pass) {
+        document.getElementById('editId').value = id;
+        document.getElementById('editName').value = name;
+        document.getElementById('editEmail').value = email;
+        document.getElementById('editRole').value = role;
+        document.getElementById('editPass').value = pass;
+    }
+</script>

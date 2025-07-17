@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FUNewsManagement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DoTungDuong_Ass2_RazorPages.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="bg-primary text-white py-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-white fw-bold fs-4" asp-area="" asp-page="/Index">FUNewsManagement</a>
+            <nav>
+                <a class="btn btn-light me-2" asp-area="" asp-page="/Index">Home</a>
+                <a class="btn btn-outline-light" asp-area="" asp-page="/Privacy">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-light border-top mt-5 py-3 text-center text-muted">
+        <div class="container">
+            &copy; 2025 - FUNewsManagement - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/newsHub")
+            .build();
+
+        connection.start().then(() => {
+            console.log("Connected to SignalR");
+        });
+
+        connection.on("ReceiveNewsUpdate", function (message) {
+            const toast = document.createElement("div");
+            toast.className = "toast align-items-center text-bg-info border-0 show position-fixed bottom-0 end-0 m-3";
+            toast.style.zIndex = 10000;
+            toast.innerHTML = `<div class='d-flex'><div class='toast-body'>
+                ${message}
+            </div><button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast'></button></div>`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 5000);
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

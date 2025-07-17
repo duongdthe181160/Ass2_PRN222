@@ -1,0 +1,97 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DoTungDuong_Ass2_RazorPages
+build_property.RootNamespace = DoTungDuong_Ass2_RazorPages
+build_property.ProjectDir = F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuong_Ass2_RazorPages\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuong_Ass2_RazorPages
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccountPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFBhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/CategoryPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/HistoryPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlzdG9yeVBhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/NewsArticlePage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c0FydGljbGVQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ProfilePage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVBhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ReportPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0UGFnZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ViewNewsPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld05ld3NQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-p6dssprh4t

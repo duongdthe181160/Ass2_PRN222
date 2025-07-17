@@ -1,0 +1,25 @@
+﻿@page
+@model DoTungDuong_Ass2_RazorPages.Pages.IndexModel
+
+<h2>Welcome to FUNewsManagement</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <a href="/Account">Manage Accounts</a>
+    <a href="/Report">View Report</a>
+}
+
+@if (User.IsInRole("Staff"))
+{
+    <a href="/Category">Manage Categories</a>
+    <a href="/NewsArticle">Manage News Articles</a>
+    <a href="/Profile">Update Profile</a>
+    <a href="/History">View My News History</a>
+}
+
+@if (User.IsInRole("Lecturer"))
+{
+    <a href="/ViewNews">View Active News</a>
+}
+
+<a href="/Logout">Logout</a>
