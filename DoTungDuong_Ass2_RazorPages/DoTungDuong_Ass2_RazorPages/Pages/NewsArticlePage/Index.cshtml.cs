@@ -27,26 +27,36 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
             _hubContext = hubContext;
         }
 
-        public IEnumerable<NewsArticle> NewsArticles { get; set; }
-        [BindProperty] public NewsArticle NewsArticle { get; set; }
-        public IEnumerable<Tag> Tags { get; set; }
-        public IEnumerable<Category> Categories { get; set; }
-        [BindProperty] public List<int> SelectedTags { get; set; }
+        public IEnumerable<NewsArticle> NewsArticles { get; set; } = new List<NewsArticle>();
+        [BindProperty] public NewsArticle NewsArticle { get; set; } = new NewsArticle();
+        public IEnumerable<Tag> Tags { get; set; } = new List<Tag>();
+        public IEnumerable<Category> Categories { get; set; } = new List<Category>();
+        [BindProperty] public List<int> SelectedTags { get; set; } = new List<int>();
 
         public void OnGet(string search = null)
         {
-            NewsArticles = string.IsNullOrEmpty(search) ? _service.GetAll() : _service.Search(n => n.Headline.Contains(search));
-            Tags = _tagService.GetAll();
-            Categories = _categoryService.GetAll();
+            NewsArticles = string.IsNullOrEmpty(search) 
+                ? _service.GetAll() 
+                : _service.Search(n => n.Headline != null && n.Headline.Contains(search));
+            Tags = _tagService.GetAllTags();
+            Categories = _categoryService.GetAllCategories();
         }
 
         public async Task<IActionResult> OnPostAdd()
         {
             try
             {
-                NewsArticle.CreatedById = short.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                _service.Add(NewsArticle, SelectedTags);
+                if (string.IsNullOrEmpty(NewsArticle.NewsArticleId))
+                {
+                    NewsArticle.NewsArticleId = Guid.NewGuid().ToString();
+                }
+                
+                NewsArticle.CreatedById = short.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0");
+                _service.Add(NewsArticle, SelectedTags ?? new List<int>());
+                
                 await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", "New news article added");
+                
+                return RedirectToPage();
             }
             catch (Exception ex)
             {
@@ -54,16 +64,18 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
                 OnGet();
                 return Page();
             }
-            return RedirectToPage();
         }
 
         public async Task<IActionResult> OnPostUpdate()
         {
             try
             {
-                NewsArticle.UpdatedById = short.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                _service.Update(NewsArticle, SelectedTags);
+                NewsArticle.UpdatedById = short.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0");
+                _service.Update(NewsArticle, SelectedTags ?? new List<int>());
+                
                 await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", "News article updated");
+                
+                return RedirectToPage();
             }
             catch (Exception ex)
             {
@@ -71,7 +83,6 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
                 OnGet();
                 return Page();
             }
-            return RedirectToPage();
         }
 
         public async Task<IActionResult> OnPostDelete(string id)
@@ -80,6 +91,8 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
             {
                 _service.Delete(id);
                 await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", "News article deleted");
+                
+                return RedirectToPage();
             }
             catch (Exception ex)
             {
@@ -87,7 +100,6 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.NewsArticlePage
                 OnGet();
                 return Page();
             }
-            return RedirectToPage();
         }
     }
 }

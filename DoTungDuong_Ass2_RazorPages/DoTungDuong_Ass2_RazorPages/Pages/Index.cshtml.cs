@@ -15,10 +15,10 @@ public class IndexModel : PageModel
         _newsService = newsService;
     }
 
-    public IEnumerable<NewsArticle> NewsArticles { get; set; }
+    public IEnumerable<NewsArticle> NewsArticles { get; set; } = new List<NewsArticle>();
 
     public void OnGet()
     {
-        NewsArticles = _newsService.GetAllNewsArticles(false);  // Active only
+        NewsArticles = _newsService.GetActiveNews();  // Active only
     }
 }

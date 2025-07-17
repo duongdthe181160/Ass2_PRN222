@@ -14,12 +14,15 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.HistoryPage
 
         public IndexModel(NewsArticleService service) { _service = service; }
 
-        public IEnumerable<NewsArticle> NewsHistory { get; set; }
+        public IEnumerable<NewsArticle> NewsHistory { get; set; } = new List<NewsArticle>();
 
         public void OnGet()
         {
-            var userId = short.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            NewsHistory = _service.GetHistoryByUser(userId);
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!string.IsNullOrEmpty(userIdString) && short.TryParse(userIdString, out short userId))
+            {
+                NewsHistory = _service.GetHistoryByUser(userId);
+            }
         }
     }
 }

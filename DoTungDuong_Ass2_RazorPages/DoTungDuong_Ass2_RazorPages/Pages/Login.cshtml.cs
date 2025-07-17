@@ -17,12 +17,12 @@ namespace DoTungDuong_Ass2_RazorPages.Pages
         }
 
         [BindProperty]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [BindProperty]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
 
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get; set; } = string.Empty;
 
         public async Task<IActionResult> OnPostAsync()
         {

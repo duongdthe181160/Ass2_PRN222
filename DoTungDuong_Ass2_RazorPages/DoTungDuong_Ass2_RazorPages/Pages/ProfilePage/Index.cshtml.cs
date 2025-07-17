@@ -18,7 +18,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.ProfilePage
         }
 
         [BindProperty]
-        public SystemAccount Account { get; set; }
+        public SystemAccount Account { get; set; } = new SystemAccount();
 
         public IActionResult OnGet()
         {
@@ -26,7 +26,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.ProfilePage
             if (string.IsNullOrEmpty(email))
                 return RedirectToPage("/Login");
 
-            Account = _accountService.GetByEmail(email);
+            Account = _accountService.GetAccountByEmail(email);
             if (Account == null)
                 return NotFound();
 
@@ -40,7 +40,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.ProfilePage
 
             try
             {
-                _accountService.Update(Account);
+                _accountService.UpdateAccount(Account);
             }
             catch (Exception ex)
             {

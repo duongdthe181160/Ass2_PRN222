@@ -1,4 +1,4 @@
-﻿using DoTungDuongDAL.Models;
+using DoTungDuongDAL.Models;
 using DoTungDuongDAL.Repositories;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -25,9 +25,14 @@ namespace DoTungDuongBLL.Services
             return _repository.GetAll();
         }
 
-        public SystemAccount GetAccountById(short id)
+        public SystemAccount? GetAccountById(short id)
         {
             return _repository.GetById(id);
+        }
+
+        public SystemAccount? GetAccountByEmail(string email)
+        {
+            return _repository.Search(a => a.AccountEmail == email).FirstOrDefault();
         }
 
         public void AddAccount(SystemAccount account)
@@ -43,15 +48,19 @@ namespace DoTungDuongBLL.Services
         public void DeleteAccount(short id)
         {
             var account = GetAccountById(id);
-            _repository.Delete(account);
+            if (account != null)
+            {
+                _repository.Delete(account);
+            }
         }
 
         public IEnumerable<SystemAccount> SearchAccounts(string keyword)
         {
-            return _repository.Search(a => a.AccountName.Contains(keyword) || a.AccountEmail.Contains(keyword));
+            return _repository.Search(a => (a.AccountName != null && a.AccountName.Contains(keyword)) || 
+                                          (a.AccountEmail != null && a.AccountEmail.Contains(keyword)));
         }
 
-        public ClaimsPrincipal Authenticate(string email, string password)
+        public ClaimsPrincipal? Authenticate(string email, string password)
         {
             var adminEmail = _configuration["AdminAccount:Email"];
             var adminPassword = _configuration["AdminAccount:Password"];
@@ -87,10 +96,14 @@ namespace DoTungDuongBLL.Services
         public void UpdateProfile(short id, SystemAccount updated)
         {
             var account = GetAccountById(id);
-            account.AccountName = updated.AccountName;
-            account.AccountEmail = updated.AccountEmail;
-            if (!string.IsNullOrEmpty(updated.AccountPassword)) account.AccountPassword = updated.AccountPassword;  // Hash if needed
-            UpdateAccount(account);
+            if (account != null)
+            {
+                account.AccountName = updated.AccountName;
+                account.AccountEmail = updated.AccountEmail;
+                if (!string.IsNullOrEmpty(updated.AccountPassword)) 
+                    account.AccountPassword = updated.AccountPassword;  // Hash if needed
+                UpdateAccount(account);
+            }
         }
     }
 }

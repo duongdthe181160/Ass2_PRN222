@@ -17,81 +17,79 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DoTungDuong_Ass2_RazorPages
 build_property.RootNamespace = DoTungDuong_Ass2_RazorPages
-build_property.ProjectDir = F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuong_Ass2_RazorPages\
+build_property.ProjectDir = /workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\2. Kỳ 8\PRN222\DoTungDuong_Ass2_RazorPages\DoTungDuong_Ass2_RazorPages
+build_property.MSBuildProjectDirectory = /workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccessDenied.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccountPage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFBhZ2VcSW5kZXguY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/AccountPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudFBhZ2UvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/CategoryPage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlQYWdlXEluZGV4LmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/CategoryPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcnlQYWdlL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/HistoryPage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlzdG9yeVBhZ2VcSW5kZXguY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/HistoryPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSGlzdG9yeVBhZ2UvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Logout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/NewsArticlePage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c0FydGljbGVQYWdlXEluZGV4LmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/NewsArticlePage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3c0FydGljbGVQYWdlL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ProfilePage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVBhZ2VcSW5kZXguY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ProfilePage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZmlsZVBhZ2UvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ReportPage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0UGFnZVxJbmRleC5jc2h0bWw=
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ReportPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0UGFnZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ViewNewsPage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld05ld3NQYWdlXEluZGV4LmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/ViewNewsPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmlld05ld3NQYWdlL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/2. Kỳ 8/PRN222/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-p6dssprh4t
+[/workspace/DoTungDuong_Ass2_RazorPages/DoTungDuong_Ass2_RazorPages/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0ccylkmynr

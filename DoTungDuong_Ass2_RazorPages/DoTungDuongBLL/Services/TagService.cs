@@ -1,4 +1,4 @@
-﻿using DoTungDuongDAL.Models;
+using DoTungDuongDAL.Models;
 using DoTungDuongDAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace DoTungDuongBLL.Services
             return _repository.GetAll();
         }
 
-        public Tag GetTagById(int id)
+        public Tag? GetTagById(int id)
         {
             return _repository.GetById(id);
         }
@@ -57,7 +57,8 @@ namespace DoTungDuongBLL.Services
 
         public IEnumerable<Tag> SearchTags(string keyword)
         {
-            return _repository.Search(t => t.TagName.Contains(keyword) || t.Note.Contains(keyword));
+            return _repository.Search(t => (t.TagName != null && t.TagName.Contains(keyword)) || 
+                                          (t.Note != null && t.Note.Contains(keyword)));
         }
     }
 }

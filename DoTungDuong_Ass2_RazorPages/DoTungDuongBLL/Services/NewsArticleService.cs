@@ -1,8 +1,6 @@
-﻿using DoTungDuong_Ass2_RazorPages.Hubs;
 using DoTungDuongDAL;
 using DoTungDuongDAL.Models;
 using DoTungDuongDAL.Repositories;
-using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,46 +14,46 @@ namespace DoTungDuongBLL.Services
         private readonly INewsArticleRepository _repository;
         private readonly IRepository<Category> _categoryRepo;
         private readonly IRepository<Tag> _tagRepo;
-        private readonly IHubContext<NewsHub> _hubContext;
 
         public NewsArticleService(
             INewsArticleRepository repository,
             IRepository<Tag> tagRepo,
-            IRepository<Category> categoryRepo,
-            IHubContext<NewsHub> hubContext)
+            IRepository<Category> categoryRepo)
         {
             _repository = repository;
             _tagRepo = tagRepo;
             _categoryRepo = categoryRepo;
-            _hubContext = hubContext;
         }
 
         public IEnumerable<NewsArticle> GetAll() => _repository.GetNewsWithTags();
 
-        public NewsArticle GetById(string id) => _repository.GetById(id);
+        public NewsArticle? GetById(string id) => _repository.GetById(id);
 
-        public async Task AddAsync(NewsArticle article, List<int> tagIds)
+        public void Add(NewsArticle article, List<int> tagIds)
         {
-            if (string.IsNullOrEmpty(article.Headline)) throw new ArgumentException("Headline required");
+            if (string.IsNullOrEmpty(article.Headline)) 
+                throw new ArgumentException("Headline is required");
+            
+            if (string.IsNullOrEmpty(article.NewsArticleId))
+                throw new ArgumentException("NewsArticleId is required");
+            
             article.CreatedDate = DateTime.Now;
-            _repository.Add(article);
-            foreach (var tagId in tagIds)
-            {
-                var tag = _tagRepo.GetById(tagId);
-                if (tag != null) article.Tags.Add(tag);
-            }
-            _repository.Update(article);
-
-            await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", "New article created");
+            article.NewsStatus = article.NewsStatus ?? true; // Default to active
+            
+            // Use the repository method that handles tags
+            _repository.AddNewsWithTags(article, tagIds);
         }
 
-        public async Task UpdateAsync(NewsArticle article, List<int> tagIds)
+        public void Update(NewsArticle article, List<int> tagIds)
         {
-            if (string.IsNullOrEmpty(article.Headline)) throw new ArgumentException("Headline required");
-            article.ModifiedDate = DateTime.Now;
+            if (string.IsNullOrEmpty(article.Headline)) 
+                throw new ArgumentException("Headline is required");
+            
             var existing = _repository.GetById(article.NewsArticleId);
-            if (existing == null) throw new ArgumentException("Article not found");
+            if (existing == null) 
+                throw new ArgumentException("Article not found");
 
+            // Update properties
             existing.NewsTitle = article.NewsTitle;
             existing.Headline = article.Headline;
             existing.NewsContent = article.NewsContent;
@@ -63,18 +61,10 @@ namespace DoTungDuongBLL.Services
             existing.CategoryId = article.CategoryId;
             existing.NewsStatus = article.NewsStatus;
             existing.UpdatedById = article.UpdatedById;
-            existing.ModifiedDate = article.ModifiedDate;
+            existing.ModifiedDate = DateTime.Now;
 
-            existing.Tags.Clear();
-            foreach (var tagId in tagIds)
-            {
-                var tag = _tagRepo.GetById(tagId);
-                if (tag != null) existing.Tags.Add(tag);
-            }
-
-            _repository.Update(existing);
-
-            await _hubContext.Clients.All.SendAsync("ReceiveNewsUpdate", $"Article {article.NewsArticleId} updated");
+            // Use the repository method that handles tags
+            _repository.UpdateNewsWithTags(existing, tagIds);
         }
 
         public void Delete(string id)
@@ -86,11 +76,14 @@ namespace DoTungDuongBLL.Services
             }
         }
 
-        public IEnumerable<NewsArticle> Search(Expression<Func<NewsArticle, bool>> predicate) => _repository.Search(predicate);
+        public IEnumerable<NewsArticle> Search(Expression<Func<NewsArticle, bool>> predicate) 
+            => _repository.Search(predicate);
 
-        public IEnumerable<NewsArticle> GetActiveNews() => Search(n => n.NewsStatus == true).AsEnumerable();
+        public IEnumerable<NewsArticle> GetActiveNews() 
+            => _repository.Search(n => n.NewsStatus == true);
 
-        public IEnumerable<NewsArticle> GetHistoryByUser(short userId) => Search(n => n.CreatedById == userId);
+        public IEnumerable<NewsArticle> GetHistoryByUser(short userId) 
+            => _repository.Search(n => n.CreatedById == userId);
 
         public IEnumerable<ReportDTO> GetReport(DateTime start, DateTime end)
         {

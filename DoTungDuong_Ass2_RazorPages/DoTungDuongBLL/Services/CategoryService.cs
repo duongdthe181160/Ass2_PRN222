@@ -1,4 +1,4 @@
-﻿using DoTungDuongDAL.Models;
+using DoTungDuongDAL.Models;
 using DoTungDuongDAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace DoTungDuongBLL.Services
             return _repository.GetAll();
         }
 
-        public Category GetCategoryById(short id)
+        public Category? GetCategoryById(short id)
         {
             return _repository.GetById(id);
         }
@@ -44,7 +44,7 @@ namespace DoTungDuongBLL.Services
         public void DeleteCategory(short id)
         {
             var category = GetCategoryById(id);
-            if (CanDeleteCategory(id))
+            if (category != null && CanDeleteCategory(id))
             {
                 _repository.Delete(category);
             }
@@ -52,7 +52,7 @@ namespace DoTungDuongBLL.Services
 
         public IEnumerable<Category> SearchCategories(string keyword)
         {
-            return _repository.Search(c => c.CategoryName.Contains(keyword));
+            return _repository.Search(c => c.CategoryName != null && c.CategoryName.Contains(keyword));
         }
     }
 }

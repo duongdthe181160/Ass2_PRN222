@@ -15,19 +15,19 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.AccountPage
 
         public IndexModel(SystemAccountService service) { _service = service; }
 
-        public IEnumerable<SystemAccount> Accounts { get; set; }
-        [BindProperty] public SystemAccount Account { get; set; }
+        public IEnumerable<SystemAccount> Accounts { get; set; } = new List<SystemAccount>();
+        [BindProperty] public SystemAccount Account { get; set; } = new SystemAccount();
 
         public void OnGet(string search = null)
         {
-            Accounts = string.IsNullOrEmpty(search) ? _service.GetAll() : _service.Search(a => a.AccountName.Contains(search) || a.AccountEmail.Contains(search));
+            Accounts = string.IsNullOrEmpty(search) ? _service.GetAllAccounts() : _service.SearchAccounts(search);
         }
 
         public IActionResult OnPostAdd()
         {
             try
             {
-                _service.Add(Account);
+                _service.AddAccount(Account);
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.AccountPage
         {
             try
             {
-                _service.Update(Account);
+                _service.UpdateAccount(Account);
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.AccountPage
         {
             try
             {
-                _service.Delete(id);
+                _service.DeleteAccount(id);
             }
             catch (Exception ex)
             {

@@ -15,7 +15,7 @@ namespace DoTungDuong_Ass2_RazorPages.Pages.ReportPage
 
         public IndexModel(NewsArticleService service) { _service = service; }
 
-        public IEnumerable<ReportItem> ReportData { get; set; }
+        public IEnumerable<ReportDTO> ReportData { get; set; } = new List<ReportDTO>();
         [BindProperty] public DateTime StartDate { get; set; } = DateTime.Now.AddMonths(-1);
         [BindProperty] public DateTime EndDate { get; set; } = DateTime.Now;
 

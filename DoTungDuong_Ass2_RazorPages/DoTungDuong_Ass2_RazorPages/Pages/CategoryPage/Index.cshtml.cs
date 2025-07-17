@@ -4,44 +4,52 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-[Authorize(Roles = "Staff")]
-public class CategoryIndexModel : PageModel
+namespace DoTungDuong_Ass2_RazorPages.Pages.CategoryPage
 {
-    private readonly CategoryService _categoryService;
-
-    public CategoryIndexModel(CategoryService categoryService)
+    [Authorize(Roles = "Staff")]
+    public class IndexModel : PageModel
     {
-        _categoryService = categoryService;
-    }
+        private readonly CategoryService _categoryService;
 
-    public IEnumerable<Category> Categories { get; set; }
-
-    [BindProperty(SupportsGet = true)]
-    public string SearchKeyword { get; set; }
-
-    public void OnGet()
-    {
-        Categories = string.IsNullOrEmpty(SearchKeyword) ? _categoryService.GetAllCategories() : _categoryService.SearchCategories(SearchKeyword);
-    }
-
-    public IActionResult OnPostAdd(Category category)
-    {
-        if (ModelState.IsValid)
+        public IndexModel(CategoryService categoryService)
         {
-            _categoryService.AddCategory(category);
-            return new JsonResult(new { success = true });
+            _categoryService = categoryService;
         }
-        return new JsonResult(new { success = false, errors = ModelState.Errors });
-    }
 
-    // Similar for Update, Delete with confirm
-    public IActionResult OnPostDelete(short id)
-    {
-        if (_categoryService.CanDeleteCategory(id))
+        public IEnumerable<Category> Categories { get; set; } = new List<Category>();
+
+        [BindProperty(SupportsGet = true)]
+        public string? SearchKeyword { get; set; }
+        
+        [BindProperty]
+        public Category Category { get; set; } = new Category();
+
+        public void OnGet()
         {
-            _categoryService.DeleteCategory(id);
-            return new JsonResult(new { success = true });
+            Categories = string.IsNullOrEmpty(SearchKeyword) 
+                ? _categoryService.GetAllCategories() 
+                : _categoryService.SearchCategories(SearchKeyword);
         }
-        return new JsonResult(new { success = false, message = "Cannot delete" });
+
+        public IActionResult OnPostAdd(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _categoryService.AddCategory(category);
+                return new JsonResult(new { success = true });
+            }
+            return new JsonResult(new { success = false, errors = ModelState });
+        }
+
+        // Similar for Update, Delete with confirm
+        public IActionResult OnPostDelete(short id)
+        {
+            if (_categoryService.CanDeleteCategory(id))
+            {
+                _categoryService.DeleteCategory(id);
+                return new JsonResult(new { success = true });
+            }
+            return new JsonResult(new { success = false, message = "Cannot delete" });
+        }
     }
 }
